@@ -13,15 +13,27 @@ echo ""
 
 ifconfig
 
-read -p $'\e[33m[-] Escribe el nombre de tu interfaz: \e[0m ' interfaz
+read -p $'\e[33m[-] Escribe el nombre de tu interfaz: \e[0m ' interfazmon
 
 # coloca la interfaz en modo monitor
 
 sudo airmong-ng check kill
-sudo airmon-ng start $interfaz
+sudo airmon-ng start $interfazmon
 
 echo -e "\033[31m[-] Colocando tu interfaz en modo monitor..\033[0m"
 echo ""
+
+clear
+
+echo -e "\033[32m[-] Tu interfaz fue puesta en modo monitor, nueva lista de interfaces disponibles:\033[0m"
+echo ""
+
+# Lista las interfaces disponibles
+
+ifconfig
+
+read -p $'\e[33m[-] Escribe el nombre de tu interfaz en modo monitor: \e[0m ' interfaz
+
 
 # Abre una nueva terminal para visualizar las redes wifi disponibles
 
